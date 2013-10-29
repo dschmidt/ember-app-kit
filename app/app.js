@@ -18,4 +18,16 @@ App.initializer({
   }
 });
 
+App.initializer({
+    name: 'Register MyThing',
+    before: 'domTemplates',
+    initialize: function (container, application) {
+        alert('Initializer!');
+        application.register('mything:main', Em.Object.extend());
+        application.inject('component', 'mything', 'mything:main');
+    }
+});
+
+
+
 export default App;
